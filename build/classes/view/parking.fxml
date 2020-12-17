@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControleurParking">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="261.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.0" minWidth="0.0" prefWidth="107.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.0" minWidth="0.0" prefWidth="405.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="290.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="67.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="276.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="350.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="477.0" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="477.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="0.0" prefHeight="56.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="571.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <RadioButton fx:id="operateur" mnemonicParsing="false" text="Opérateur" GridPane.columnIndex="2">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <toggleGroup>
+            <ToggleGroup fx:id="user" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="administrateur" mnemonicParsing="false" text="Administrateur" toggleGroup="$user" GridPane.columnIndex="3">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </RadioButton>
+      <Button mnemonicParsing="false" onAction="#ajouterCarteEmploye" prefHeight="31.0" prefWidth="504.0" text="Ajouter carte employé" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#ajouterCarteVisiteur" prefHeight="31.0" prefWidth="476.0" text="Ajouter carte visiteur" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#afficherListeCarteEmploye" prefHeight="31.0" prefWidth="420.0" text="Afficher la liste des cartes employé" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5" />
+      <Button mnemonicParsing="false" onAction="#entreeParking" prefHeight="31.0" prefWidth="304.0" text="Entrée Parking Employé" GridPane.columnSpan="2" GridPane.rowIndex="15">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#entreeInconnu" prefHeight="31.0" prefWidth="469.0" text="Simuler entrée inconnu" GridPane.columnIndex="2" GridPane.rowIndex="11">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sortieParking" prefHeight="31.0" prefWidth="304.0" text="Sortie Parking Employé" GridPane.columnSpan="2" GridPane.rowIndex="16">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <ListView fx:id="listViewCarte" prefHeight="199.0" prefWidth="270.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="5">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <Button mnemonicParsing="false" onAction="#supprimerCarte" prefHeight="31.0" prefWidth="480.0" text="Supprimer une carte employé" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <ListView fx:id="listViewParking" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="4">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label prefHeight="20.0" prefWidth="295.0" text="Stationnement en cours dans le parking" textFill="#3f6ee4" underline="true" GridPane.columnSpan="2" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label text="Liste des employés :" textFill="#3f6ee4" underline="true" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="utilisateurparking" prefHeight="21.0" prefWidth="43.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="21.0" prefWidth="248.0" text="Parking Employé :" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="50.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#uneVoitureSePresente" prefHeight="31.0" prefWidth="428.0" text="Simuler entrée employé" GridPane.columnIndex="2" GridPane.rowIndex="12">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></Button>
+      <ListView fx:id="listViewParkingVisiteur" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="4">
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin></ListView>
+      <ListView fx:id="listViewCarteVisiteur" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="5">
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin></ListView>
+      <Button mnemonicParsing="false" onAction="#afficherListeCarteVisiteur" prefHeight="31.0" prefWidth="467.0" text="Afficher la liste des cartes visiteur" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></Button>
+      <Label text="Liste des visiteurs : " textFill="#3f6ee4" underline="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Stationnement parking visiteur " textFill="#3f6ee4" underline="true" GridPane.columnIndex="3" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#entreeParkingVisiteur" prefHeight="31.0" prefWidth="361.0" text="Entrée parking visiteur " GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="15">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></Button>
+      <Button mnemonicParsing="false" onAction="#sortieParkingVisiteur" prefHeight="31.0" prefWidth="365.0" text="Sortie parking visiteur " GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="16">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></Button>
+      <Label text="Parking visiteur :" GridPane.columnIndex="3" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="50.0" right="20.0" top="20.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="utilisateurparkingvisiteur" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin></Label>
+      <Label text="Contrôle d'accès au parking " underline="true" GridPane.columnSpan="3">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label text="Contrôle simulateur :" underline="true" GridPane.rowIndex="8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#uneVoiturePart" prefHeight="31.0" prefWidth="551.0" text="Simuler sortie employé" GridPane.columnIndex="2" GridPane.rowIndex="13">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></Button>
+      <Label text="SIMULATION" textFill="#fc1d1d" GridPane.columnIndex="2" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="125.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#uneVoitureSePresenteVisiteur" prefHeight="31.0" prefWidth="679.0" text="Simuler entrée visiteur" GridPane.columnIndex="2" GridPane.rowIndex="14">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#uneVoiturePartVisiteur" prefHeight="31.0" prefWidth="539.0" text="Simuler sortie visiteur" GridPane.columnIndex="2" GridPane.rowIndex="15">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#barriereEnPanne" prefHeight="31.0" prefWidth="614.0" text="Simuler barrière en panne : park employé" GridPane.columnIndex="2" GridPane.rowIndex="16">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+</GridPane>
